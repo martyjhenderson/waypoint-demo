@@ -9,7 +9,7 @@ tasks:
       gp sync-await waypoint && \
       brew install doctl && \
       doctl auth init --access-token $DIGITALOCEAN_ACCESS_TOKEN
-      gp-sync doctl
+      gp sync-done doctl
   - name: Install kubectl
     command: brew install kubectl    
 vscode:
