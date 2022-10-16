@@ -2,11 +2,13 @@ tasks:
   - name: Install Waypoint
     command: |
       brew tap hashicorp/tap && \
-      brew install hashicorp/tap/waypoint
+      brew install hashicorp/tap/waypoint && \
+      gp sync-done waypoint
   - name: Install doctl
     command: |
+      gp sync-await waypoint && \
       brew install doctl && \
-      gp-sync done
+      gp-sync doctl
   - name: Install kubectl
     command: brew install kubectl    
 vscode:
