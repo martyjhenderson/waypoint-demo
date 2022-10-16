@@ -1,0 +1,20 @@
+tasks:
+  - name: Install Waypoint
+    command: |
+      brew tap hashicorp/tap && \
+      brew install hashicorp/tap/waypoint
+  - name: Install doctl
+    command: |
+      brew install doctl && \
+      gp-sync done
+  - name: Install kubectl
+    command: brew install kubectl    
+vscode:
+  extensions:
+    - hashicorp.terraform
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+github:
+  prebuilds:
+    master: true
+    pullRequests: true
+    addComment: true  
