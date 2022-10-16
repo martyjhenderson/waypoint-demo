@@ -8,7 +8,8 @@ tasks:
     command: |
       gp sync-await waypoint && \
       brew install doctl && \
-      doctl auth init --access-token $DIGITALOCEAN_ACCESS_TOKEN
+      doctl auth init --access-token $DIGITALOCEAN_ACCESS_TOKEN && \      
+      doctl kubernetes cluster kubeconfig save crossplane-demo && \
       gp sync-done doctl
   - name: Install kubectl
     command: brew install kubectl    
